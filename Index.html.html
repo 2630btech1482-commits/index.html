@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySpace 2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">✦ StudySpace</div>
+    <nav>
+        <a href="#dashboard">Home</a>
+        <a href="#profile">My Buddy</a>
+        <a href="#tasks">Tasks</a>
+        <a href="#focus">Focus</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="welcome" id="dashboard">
+        <div>
+            <p class="tag">YOUR LITTLE PRODUCTIVITY UNIVERSE</p>
+            <h1>Make today <span>magical.</span></h1>
+            <p>Little progress is still progress. Let's make it count!</p>
+            <p id="today"></p>
+        </div>
+        <div class="welcome-icon">🌙</div>
+    </section>
+
+    <!-- PROFILE AND MONSTER -->
+
+    <section class="profile-section" id="profile">
+        <div class="profile-heading">
+            <div>
+                <p class="tag">YOUR STUDY COMPANION</p>
+                <h2>Meet your little buddy ✨</h2>
+            </div>
+            <span class="level-badge" id="level">LEVEL 1</span>
+        </div>
+
+        <div class="monster-card">
+            <div class="monster-display">
+                <div id="monsterImage" class="monster-image">🐉</div>
+                <h2 id="monsterName">Stardust</h2>
+                <p id="monsterMood">Ready to conquer the universe!</p>
+                <div class="xp-bar">
+                    <div id="xpFill"></div>
+                </div>
+                <small id="xpText">0 / 100 XP</small>
+            </div>
+
+            <div class="monster-settings">
+                <h3>Choose your creature</h3>
+
+                <div class="monster-options">
+                    <button class="monster-choice selected"
+                        data-monster="🐉">🐉</button>
+                    <button class="monster-choice"
+                        data-monster="🦄">🦄</button>
+                    <button class="monster-choice"
+                        data-monster="👾">👾</button>
+                    <button class="monster-choice"
+                        data-monster="🧚">🧚</button>
+                    <button class="monster-choice"
+                        data-monster="🐸">🐸</button>
+                    <button class="monster-choice"
+                        data-monster="🦋">🦋</button>
+                </div>
+
+                <label for="buddyInput">Give your buddy a name</label>
+                <div class="name-input">
+                    <input type="text" id="buddyInput"
+                        placeholder="Enter a cute name" maxlength="18">
+                    <button id="saveBuddy">Save</button>
+                </div>
+
+                <p class="buddy-message" id="buddyMessage">
+                    Your buddy believes in you!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS -->
+
+    <section class="stats">
+        <div class="stat-card">
+            <span>⭐</span>
+            <p>Total XP</p>
+            <h2 id="totalXP">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <span>🔥</span>
+            <p>Day Streak</p>
+            <h2 id="streak">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <span>🏆</span>
+            <p>Sessions</p>
+            <h2 id="sessions">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <span>✅</span>
+            <p>Tasks Done</p>
+            <h2 id="completed">0</h2>
+        </div>
+    </section>
+
+    <!-- DAILY MOTIVATION -->
+
+    <section class="motivation-card">
+        <span>💌 A message from your buddy</span>
+        <h3 id="motivation">
+            You're capable of more than you think.
+        </h3>
+        <button id="newMotivation">Another message ✨</button>
+    </section>
+
+    <!-- TASK MANAGER -->
+
+    <section class="task-section" id="tasks">
+        <div class="section-heading">
+            <div>
+                <h2>My Daily Tasks</h2>
+                <p>Get things done, one step at a time.</p>
+            </div>
+        </div>
+
+        <div class="task-input">
+            <input type="text" id="taskInput"
+                placeholder="What do you need to do?">
+            <input type="date" id="taskDate">
+            <button id="addTask">+ Add Task</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="pending">Pending</button>
+            <button class="filter" data-filter="completed">Completed</button>
+        </div>
+
+        <div id="taskList"></div>
+    </section>
+
+    <!-- FOCUS TIMER -->
+
+    <section class="focus-section" id="focus">
+        <p class="tag">YOUR DISTRACTION-FREE ZONE</p>
+        <h2>It's focus o'clock! ⏳</h2>
+        <p>Give your dreams 25 minutes of your attention.</p>
+
+        <div class="duration-options">
+            <button class="duration active" data-minutes="25">25 min</button>
+            <button class="duration" data-minutes="45">45 min</button>
+            <button class="duration" data-minutes="50">50 min</button>
+        </div>
+
+        <div class="timer" id="timer">25:00</div>
+
+        <label class="alarm-setting">
+            <input type="checkbox" id="alarmEnabled" checked>
+            Play alarm when finished 🔔
+        </label>
+
+        <div class="timer-buttons">
+            <button id="startTimer">Start Focus</button>
+            <button id="pauseTimer">Pause</button>
+            <button id="resetTimer">Reset</button>
+        </div>
+
+        <p id="timerMessage">Your buddy is waiting for you!</p>
+    </section>
+
+    <!-- REWARDS -->
+
+    <section class="reward-section">
+        <p class="tag">YOUR LITTLE ACHIEVEMENTS</p>
+        <h2>Reward Collection 🏆</h2>
+
+        <div class="reward-grid">
+            <div class="reward-card" id="reward1">
+                <span>🌱</span>
+                <h3>First Steps</h3>
+                <p>Earn 25 XP</p>
+            </div>
+
+            <div class="reward-card" id="reward2">
+                <span>🌟</span>
+                <h3>Rising Star</h3>
+                <p>Earn 100 XP</p>
+            </div>
+
+            <div class="reward-card" id="reward3">
+                <span>👑</span>
+                <h3>Royal Scholar</h3>
+                <p>Earn 250 XP</p>
+            </div>
+
+            <div class="reward-card" id="reward4">
+                <span>🔥</span>
+                <h3>Consistency</h3>
+                <p>Maintain a 7-day streak</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    Made with ♥ for dreamers and achievers | StudySpace 2.0
+</footer>
+
+<!-- FOCUS LOCK SCREEN -->
+
+<div id="focusOverlay" class="focus-overlay hidden">
+    <div class="lock-card">
+        <div class="lock-icon">🔒</div>
+        <p class="tag">FOCUS MODE IS ACTIVE</p>
+        <h1>Stay with your dreams.</h1>
+        <div id="lockTimer">25:00</div>
+        <p id="lockMessage">Your buddy is cheering for you!</p>
+        <p class="lock-note">
+            One session. One goal. No distractions.
+        </p>
+        <button id="endFocus">End Focus Session</button>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
